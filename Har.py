@@ -1,3 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from browsermobproxy import Server
+from pip._vendor.requests.api import options
+import json
+from pip._vendor.html5lib.treewalkers import pprint
+from pprint import pprint
+import time
+
+#options={'port': 8710}
+
 
 def create_har(url):
     server = Server("/Users/srirams/Downloads/browsermob-proxy-2.1.4/bin/browsermob-proxy")
@@ -21,5 +32,6 @@ def __init__():
     
 if __name__ == "__main__":
     print("Hi")
-    testurl="(https://www.google.com")
+    testurl="https://www.google.com"
     create_har(testurl,harfilename)
+    
