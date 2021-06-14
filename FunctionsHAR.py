@@ -18,7 +18,6 @@ def create_HAR(server,driver,proxy):
     with open("harfile", "w") as harfile:
        harfile.write(json.dumps(proxy.har))
     server.stop()
-    driver.quit()
     
 def driveroptions(url):
         server = Server(path)
