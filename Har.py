@@ -27,9 +27,6 @@ def create_har(url):
     server.stop()
     driver.quit()
     
-def __init__():
-    create_har()
-    
 if __name__ == "__main__":
     print("Hi")
     testurl="https://www.google.com"
