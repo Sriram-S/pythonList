@@ -18,12 +18,12 @@ def create_HAR(server,driver,proxy):
     server.stop()
     driver.quit()
     
-def driveroptions():
+def driveroptions(testurl):
         options = webdriver.ChromeOptions()
         options.add_argument("--proxy-server=http://localhost:8082")
         options.add_argument('ignore-certificate-errors')
         driver =webdriver.Chrome("/Users/user/Downloads/chromedriver",options=options)
-        driver.get(url)
+        driver.get(testurl)
         time.sleep(5)
         return driver;
     
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     server.start()
     proxy = server.create_proxy()
     proxy.new_har("google")
-    driver=driveroptions()
+    driver=driveroptions(testurl)
     create_har(server,driver,proxy)
     
 
