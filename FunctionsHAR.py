@@ -21,13 +21,13 @@ def create_HAR(server,driver,proxy):
     driver.quit()
     
 def driveroptions(url):
+        server = Server(path)
+        server.start()
+        proxy = server.create_proxy()
         options = webdriver.ChromeOptions()
         options.add_argument("--proxy-server={}".format(proxy.proxy))
         options.add_argument('ignore-certificate-errors')
         driver =webdriver.Chrome("/Users/srirams/Downloads/chromedriver",options=options)
-        server = Server(path)
-        server.start()
-        proxy = server.create_proxy()
         proxy.new_har("google")
         driver.get(url)
         time.sleep(5)
