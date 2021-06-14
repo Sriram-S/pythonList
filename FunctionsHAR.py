@@ -22,7 +22,7 @@ def create_HAR(server,driver,proxy):
     
 def driveroptions(url):
         options = webdriver.ChromeOptions()
-        options.add_argument("--proxy-server=http://localhost:8115")
+        options.add_argument("--proxy-server={}".format(proxy.proxy))
         options.add_argument('ignore-certificate-errors')
         driver =webdriver.Chrome("/Users/srirams/Downloads/chromedriver",options=options)
         server = Server(path)
